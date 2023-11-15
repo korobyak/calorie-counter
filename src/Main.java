@@ -4,8 +4,9 @@ public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
 
-    public static void Main(String[] args) {
+    public static void main(String[] args) {
         printMenu();
+        StepTracker stepTracker = new StepTracker();
         int userInput = scanner.nextInt();
 
         while (userInput != 0) {
@@ -14,13 +15,13 @@ public class Main {
                 int month = inputMonth();
                 int day = inputDay();
                 int steps = inputSteps();
-                StepTracker.stepPerDay(month, day, steps);
+                stepTracker.stepPerDay(month, day, steps);
             } else if (userInput == 2) {
                 int month = inputMonth();
-                StepTracker.statPerMonth(month);
+                stepTracker.statPerMonth(month);
             } else if (userInput == 3) {
                 int steps = inputSteps();
-                StepTracker.goal(steps);
+                stepTracker.goal(steps);
             } else if (userInput == 4) {
                 break;
             } else {

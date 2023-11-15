@@ -15,23 +15,23 @@ public class StepTracker {
         int[] days = new int[30];
     }
 
-    public static void stepPerDay(int month, int day, int steps) {
+    public void stepPerDay(int month, int day, int steps) {
         monthToData[month].days[day - 1] = steps;
         System.out.println("Значение сохранено");
     }
 
-    public static void goal(int newGoal) {
+    public void goal(int newGoal) {
         if (goal < 0) {
             System.out.println("Цель не может быть отрицательной");
         } else {
             goal = newGoal;
-            System.out.println("Новая цель: " + goal + "шагов в день");
+            System.out.println("Новая цель: " + goal + " шагов в день");
         }
     }
 
-    public static void statPerMonth(int month) {
+    public void statPerMonth(int month) {
         for (int i = 0; i < monthToData[month].days.length; i++) {
-            System.out.println((i + 1) + "день: " + monthToData[month].days[i]);
+            System.out.println((i + 1) + " день: " + monthToData[month].days[i]);
         }
 
         int sumSteps = 0;
@@ -66,6 +66,6 @@ public class StepTracker {
         System.out.println("Среднее количество в день: " + avgSteps + " шагов");
         System.out.println("Пройдено: " + Converter.km(sumSteps) + " километров");
         System.out.println("Ссожено: " + Converter.kilCal(sumSteps) + " калорий");
-        System.out.println("Лучшая серия: " + bestRange + "дней подряд выполняли цель");
+        System.out.println("Лучшая серия: " + bestRange + " дней подряд выполняли цель");
     }
 }
